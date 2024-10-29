@@ -5,12 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_20241029飲料"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <StackPanel Margin="10,10,0,55" HorizontalAlignment="Left" Width="560" Background="#FFA2A7EB">
-            <StackPanel Height="100" Margin="5,5,5,11" Background="#FFD92F2F"/>
+        Title="飲料點餐系統V1" Height="705" Width="800">
+    <Grid Margin="0,0,0,-5">
+        <StackPanel Margin="10,10,0,348" HorizontalAlignment="Left" Width="560" Background="#FFA2A7EB">
+            <StackPanel Height="40" Margin="5,5,5,11" Background="#FFD92F2F" Orientation="Horizontal">
+                <Label Content="紅茶小杯" FontSize="20" FontWeight="Bold" Width="100" VerticalAlignment="Center" HorizontalContentAlignment="Center" Background="#FFD1F9C6" Margin="5,5,5,5"/>
+                <Label Content="60元" FontSize="20" FontWeight="Bold" Width="50" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Background="#FFE6C049" Margin="5,5,5,5"/>
+                <TextBox TextWrapping="Wrap" Width="200" FontSize="14" Margin="5,5,5,8" Height="30" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged"/>
+            </StackPanel>
+            <StackPanel Height="40" Margin="5,5,5,11" Background="#FFD92F2F" Orientation="Horizontal">
+                <Label Content="紅茶大杯" FontSize="20" FontWeight="Bold" Width="100" VerticalAlignment="Center" HorizontalContentAlignment="Center" Background="#FFD1F9C6" Margin="5,5,5,5"/>
+                <Label Content="80元" FontSize="20" FontWeight="Bold" Width="50" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Background="#FFE6C049" Margin="5,5,5,5"/>
+                <TextBox TextWrapping="Wrap" Width="200" FontSize="14" Margin="5,5,5,8" Height="30" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged"/>
+            </StackPanel>
+            <StackPanel Height="40" Margin="5,5,5,11" Background="#FFD92F2F" Orientation="Horizontal">
+                <Label Content="綠茶小杯" FontSize="20" FontWeight="Bold" Width="100" VerticalAlignment="Center" HorizontalContentAlignment="Center" Background="#FFD1F9C6" Margin="5,5,5,5"/>
+                <Label Content="60元" FontSize="20" FontWeight="Bold" Width="50" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Background="#FFE6C049" Margin="5,5,5,5"/>
+                <TextBox TextWrapping="Wrap" Width="200" FontSize="14" Margin="5,5,5,8" Height="30" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged"/>
+            </StackPanel>
+            <StackPanel Height="40" Margin="5,5,5,11" Background="#FFD92F2F" Orientation="Horizontal">
+                <Label Content="綠茶大杯" FontSize="20" FontWeight="Bold" Width="100" VerticalAlignment="Center" HorizontalContentAlignment="Center" Background="#FFD1F9C6" Margin="5,5,5,5"/>
+                <Label Content="80元" FontSize="20" FontWeight="Bold" Width="50" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Background="#FFE6C049" Margin="5,5,5,5"/>
+                <TextBox TextWrapping="Wrap" Width="200" FontSize="14" Margin="5,5,5,8" Height="30" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged"/>
+            </StackPanel>
+            <StackPanel Height="40" Margin="5,5,5,11" Background="#FFD92F2F" Orientation="Horizontal">
+                <Label Content="奶茶小杯" FontSize="20" FontWeight="Bold" Width="100" VerticalAlignment="Center" HorizontalContentAlignment="Center" Background="#FFD1F9C6" Margin="5,5,5,5"/>
+                <Label Content="60元" FontSize="20" FontWeight="Bold" Width="50" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Background="#FFE6C049" Margin="5,5,5,5"/>
+                <TextBox TextWrapping="Wrap" Width="200" FontSize="14" Margin="5,5,5,8" Height="30" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged"/>
+            </StackPanel>
+            <StackPanel Height="40" Margin="5,5,5,11" Background="#FFD92F2F" Orientation="Horizontal">
+                <Label Content="奶茶大杯" FontSize="20" FontWeight="Bold" Width="100" VerticalAlignment="Center" HorizontalContentAlignment="Center" Background="#FFD1F9C6" Margin="5,5,5,5"/>
+                <Label Content="80元" FontSize="20" FontWeight="Bold" Width="50" VerticalContentAlignment="Center"  HorizontalContentAlignment="Center" Background="#FFE6C049" Margin="5,5,5,5"/>
+                <TextBox TextWrapping="Wrap" Width="200" FontSize="14" Margin="5,5,5,8" Height="30" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged"/>
+            </StackPanel>
         </StackPanel>
         <Button x:Name="OrderButton" Content="訂購" HorizontalAlignment="Left" Margin="590,10,0,0" VerticalAlignment="Top" Height="125" Width="200" Background="#FFE9C786" FontSize="72"/>
+        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Left" Margin="10,370,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="285" Width="740" Background="#FF12E070" FontSize="22" Padding="5,5,5,17"/>
 
     </Grid>
 </Window>

@@ -1,0 +1,16 @@
+﻿<Window x:Class="_20241029飲料.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_20241029飲料"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="10,10,0,55" HorizontalAlignment="Left" Width="560" Background="#FFA2A7EB">
+            <StackPanel Height="100" Margin="5,5,5,11" Background="#FFD92F2F"/>
+        </StackPanel>
+        <Button x:Name="OrderButton" Content="訂購" HorizontalAlignment="Left" Margin="590,10,0,0" VerticalAlignment="Top" Height="125" Width="200" Background="#FFE9C786" FontSize="72"/>
+
+    </Grid>
+</Window>

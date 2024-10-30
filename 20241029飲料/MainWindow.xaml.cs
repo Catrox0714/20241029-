@@ -20,31 +20,72 @@ namespace _20241029飲料
     /// </summary>
     public partial class MainWindow : Window
     {
+        Dictionary<string, int> drinks = new Dictionary<string, int>
+        {
+            {"紅茶大杯",60 },
+            {"紅茶小杯",40 },
+            {"綠茶大杯",60 },
+            {"綠茶小杯",40 },
+            {"奶茶大杯",50 },
+            {"奶茶小杯",30 },
+        };
         public MainWindow()
         {
             InitializeComponent();
+
+            DisplayDrinkMenu(drinks);
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void DisplayDrinkMenu(Dictionary<string, int> drinks)
         {
-            var targetTextBox = sender as TextBox;
-            int amount;
-            bool success=int.TryParse(targetTextBox.Text, out amount);
-            if (!success)
+            foreach (var drink in drinks)
             {
-                MessageBox.Show("請輸入正整數", "輸入錯誤");
-            }
-            else if (amount <= 0)
-            {
-                MessageBox.Show("請輸入正整數", "輸入錯誤");
-            }
-            else
-            {
-                var targetStackPanel = targetTextBox.Parent as StackPanel;
-                var targetLabel = targetStackPanel.Children[0] as Label;
-                var drinkName = targetLabel.Content.ToString();
-                //MessageBox.Show($"您選擇了{drinkName}，數量為{amount}杯", "訂購完成");
-                ResultTextBlock.Text += $"您選擇了{drinkName}，數量為{amount}杯\n";
+                
+                StackPanel_DrinkMenu.Height = drinks.Count * 50;
+                var sp = new StackPanel
+                {
+                    Orientation = Orientation.Horizontal,
+                    Margin = new Thickness(2),
+                    Height=40,
+                    VerticalAlignment= VerticalAlignment.Center,
+                    Background=Brushes.Aqua,
+                };
+                var cb = new CheckBox
+                {
+                    Content = $"{drink.Key} ${drink.Value}元",
+                    FontFamily = new FontFamily("微軟正黑體"),
+                    FontSize = 25,
+                    Foreground = Brushes.Black,
+                    Margin = new Thickness(5, 5, 15, 5),
+                    VerticalAlignment=VerticalAlignment.Center,
+                };
+                var sl = new Slider
+                {
+                    Width = 260,
+                    Value = 0,
+                    Minimum= 0,
+                    Maximum= 10,
+                    IsSnapToTickEnabled=true,
+                    VerticalAlignment= VerticalAlignment.Center,
+                };
+                var lb = new Label
+                {
+                    Width = 30,
+                    Content = "0",
+                    FontFamily = new FontFamily("微軟正黑體"),
+                    FontSize = 18,
+                };
+                Binding myBinding = new Binding("Value")
+                {
+                    Source = sl,
+                    Mode = BindingMode.OneWay,
+                };
+                lb.SetBinding(ContentProperty, myBinding);
+                sp.Children.Add(cb);
+                sp.Children.Add(sl);
+                sp.Children.Add(lb);
+                StackPanel_DrinkMenu.Children.Add(sp);
+                
             }
         }
     }

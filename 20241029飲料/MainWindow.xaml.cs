@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace _20241029飲料
 {
@@ -21,24 +22,33 @@ namespace _20241029飲料
     /// </summary>
     public partial class MainWindow : Window
     {
-        Dictionary<string, int> drinks = new Dictionary<string, int>
-        {
-            {"紅茶大杯",60 },
-            {"紅茶小杯",40 },
-            {"綠茶大杯",60 },
-            {"綠茶小杯",40 },
-            {"奶茶大杯",50 },
-            {"奶茶小杯",30 },
-        };
+        Dictionary<string, int> drinks = new Dictionary<string, int>();
+        
         Dictionary<string, int> orders = new Dictionary<string, int>();
         string takeout = "";
         public MainWindow()
         {
             InitializeComponent();
 
+            AddNewDrink(drinks);
+
             DisplayDrinkMenu(drinks);
         }
 
+        private void AddNewDrink(Dictionary<string, int> drinks)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter= "CSV檔案|*.csv|文字檔案|*.txt|所有檔案|*.*";
+            if (openFileDialog.ShowDialog()==true)
+            {
+                string fileName = openFileDialog.FileName;
+                ReadDrinkFromFile(fileName, drinks);
+            }
+        }
+        private void ReadDrinkFromFile(string fileName, Dictionary<string, int> drinks)
+        {
+            throw new NotImplementedException();
+        }
         private void DisplayDrinkMenu(Dictionary<string, int> drinks)
         {
             foreach (var drink in drinks)
